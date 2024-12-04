@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PDF Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      margin: 1em 0 0.5em 0;
+      color: #343434;
+      font-weight: normal;
+      font-family: 'Ultra', sans-serif;
+      font-size: 36px;
+      line-height: 42px;
+      text-transform: uppercase;
+      text-shadow: 0 2px white, 0 3px #777;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .data-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .data-row {
+      display: flex;
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+      padding: 8px 0;
+    }
+
+    .data-item {
+      flex: 1;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .data-item.label {
+      font-weight: bold;
+      background-color: #f4f4f4;
+    }
+
+    .data-item.count {
+      background-color: #fff;
+    }
+
+    .data-item.value {
+      background-color: #fff;
+      text-align: right;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      width: 100%;
+      max-width: 800px;
+      gap: 1px;
+    }
+
+    .grid-item {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .grid-item.label {
+      font-weight: bold;
+      background-color: #f4f4f4;
+      text-align: left;
+    }
+
+    .grid-item.count {
+      background-color: #fff;
+    }
+
+    .grid-item.value {
+      background-color: #fff;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Truck Report</h1>
+    <div class="data-container">
+      <div class="grid-container">
+        <div class="grid-item label">Advance Amount</div>
+        <div class="grid-item count"></div>
+        <div class="grid-item value"><%= connects.advanceAmount %></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item label">Samy Rupees</div>
+        <div class="grid-item count">-</div>
+        <div class="grid-item value"><%= connects.samyRupees %></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item label">Air Waste</div>
+        <div class="grid-item count">-</div>
+        <div class="grid-item value"><%= connects.airWaste %></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item label">Add Blue Oil</div>
+        <div class="grid-item count">2 "Wally"</div>
+        <div class="grid-item value"><%= connects.addBlueOilAmount %></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item label">Gress Count</div>
+        <div class="grid-item count"><%= connects.gressCount %></div>
+        <div class="grid-item value"><%= connects.gressAmount %></div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-item label">Another Time Gress</div>
+        <div class="grid-item count"><%= connects.anotherTimeGressName %></div>
+        <div class="grid-item value"><%= connects.anotherTimeValue %></div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-item label">Extra Modification</div>
+        <div class="grid-item count"><%= connects.extraName %></div>
+        <div class="grid-item value"><%= connects.extraValue %></div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-item label">Total</div>
+        <div class="grid-item count">-</div>
+        <div class="grid-item value"><%= connects.total %></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item label">Grand Total</div>
+        <div class="grid-item count">-</div>
+        <div class="grid-item value"><%= connects.advanceAmount %>-<%= connects.total %> = <%= connects.grandTotal %></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item label">Another Time Advance</div>
+        <div class="grid-item count">-</div>
+        <div class="grid-item value"><%= connects.anotherTimeAdvance %></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item label">Second Add Blue Oil</div>
+        <div class="grid-item count"><%= connects.sencondAddBlueOil %></div>
+        <div class="grid-item value"><%= connects.sencondOilAmount %></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item label">Second Total</div>
+        <div class="grid-item count">-</div>
+        <div class="grid-item value"><%= connects.secondTotal %></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item label">Final Total</div>
+        <div class="grid-item count">-</div>
+        <div class="grid-item value"><%= connects.secondTotal %>+ <%= connects.grandTotal %> = <%= connects.finalTotal %></div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Report generated on <%= new Date().toLocaleDateString() %></p>
+    </div>
+  </div>
+</body>
+
+</html>
